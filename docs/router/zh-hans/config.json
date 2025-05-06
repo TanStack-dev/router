@@ -1,0 +1,583 @@
+{
+  "$schema": "https://raw.githubusercontent.com/TanStack/tanstack.com/main/tanstack-docs-config.schema.json",
+  "docSearch": {
+    "appId": "FQ0DQ6MA3C",
+    "apiKey": "8264730bab8a9b7fa6a0c85761d7a3fe",
+    "indexName": "tanstack"
+  },
+  "sections": [
+    {
+      "label": "入门指南",
+      "children": [],
+      "frameworks": [
+        {
+          "label": "react",
+          "children": [
+            {
+              "label": "概述",
+              "to": "framework/react/overview"
+            },
+            {
+              "label": "安装",
+              "to": "framework/react/installation"
+            },
+            {
+              "label": "快速开始",
+              "to": "framework/react/quick-start"
+            },
+            {
+              "label": "开发工具",
+              "to": "framework/react/devtools"
+            },
+            {
+              "label": "比较",
+              "to": "framework/react/comparison"
+            },
+            {
+              "label": "从 React Router 迁移",
+              "to": "framework/react/migrate-from-react-router"
+            },
+            {
+              "label": "从 React Location 迁移",
+              "to": "framework/react/migrate-from-react-location"
+            },
+            {
+              "label": "开发体验决策",
+              "to": "framework/react/decisions-on-dx"
+            },
+            {
+              "label": "常见问题解答",
+              "to": "framework/react/faq"
+            }
+          ]
+        },
+        {
+          "label": "solid",
+          "children": [
+            {
+              "label": "概述",
+              "to": "framework/solid/overview"
+            },
+            {
+              "label": "安装",
+              "to": "framework/solid/installation"
+            },
+            {
+              "label": "快速开始",
+              "to": "framework/solid/quick-start"
+            },
+            {
+              "label": "开发工具",
+              "to": "framework/solid/devtools"
+            },
+            {
+              "label": "开发体验决策",
+              "to": "framework/solid/decisions-on-dx"
+            },
+            {
+              "label": "常见问题解答",
+              "to": "framework/solid/faq"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "路由",
+      "children": [],
+      "frameworks": [
+        {
+          "label": "react",
+          "children": [
+            {
+              "label": "路由概念",
+              "to": "framework/react/routing/routing-concepts"
+            },
+            {
+              "label": "路由树",
+              "to": "framework/react/routing/route-trees"
+            },
+            {
+              "label": "路由匹配",
+              "to": "framework/react/routing/route-matching"
+            },
+            {
+              "label": "基于文件的路由",
+              "to": "framework/react/routing/file-based-routing"
+            },
+            {
+              "label": "虚拟文件路由",
+              "to": "framework/react/routing/virtual-file-routes"
+            },
+            {
+              "label": "基于代码的路由",
+              "to": "framework/react/routing/code-based-routing"
+            },
+            {
+              "label": "使用 Vite 安装",
+              "to": "framework/react/routing/installation-with-vite"
+            },
+            {
+              "label": "使用 Rspack/Rsbuild 安装",
+              "to": "framework/react/routing/installation-with-rspack"
+            },
+            {
+              "label": "使用 Webpack 安装",
+              "to": "framework/react/routing/installation-with-webpack"
+            },
+            {
+              "label": "使用 Esbuild 安装",
+              "to": "framework/react/routing/installation-with-esbuild"
+            },
+            {
+              "label": "使用路由器命令行工具安装",
+              "to": "framework/react/routing/installation-with-router-cli"
+            },
+            {
+              "label": "文件命名约定",
+              "to": "framework/react/routing/file-naming-conventions"
+            }
+          ]
+        },
+        {
+          "label": "solid",
+          "children": [
+            {
+              "label": "路由概念",
+              "to": "framework/solid/routing/routing-concepts"
+            },
+            {
+              "label": "路由树",
+              "to": "framework/solid/routing/route-trees"
+            },
+            {
+              "label": "路由匹配",
+              "to": "framework/solid/routing/route-matching"
+            },
+            {
+              "label": "基于文件的路由",
+              "to": "framework/solid/routing/file-based-routing"
+            },
+            {
+              "label": "虚拟文件路由",
+              "to": "framework/solid/routing/virtual-file-routes"
+            },
+            {
+              "label": "基于代码的路由",
+              "to": "framework/solid/routing/code-based-routing"
+            },
+            {
+              "label": "使用 Vite 安装",
+              "to": "framework/solid/routing/installation-with-vite"
+            },
+            {
+              "label": "使用路由器命令行工具安装",
+              "to": "framework/solid/routing/installation-with-router-cli"
+            },
+            {
+              "label": "文件命名约定",
+              "to": "framework/solid/routing/file-naming-conventions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "指南",
+      "children": [],
+      "frameworks": [
+        {
+          "label": "react",
+          "children": [
+            {
+              "label": "代码分割",
+              "to": "framework/react/guide/code-splitting"
+            },
+            {
+              "label": "自动代码分割",
+              "to": "framework/react/guide/automatic-code-splitting"
+            },
+            {
+              "label": "创建路由器",
+              "to": "framework/react/guide/creating-a-router"
+            },
+            {
+              "label": "出口 (Outlet)",
+              "to": "framework/react/guide/outlets"
+            },
+            {
+              "label": "导航",
+              "to": "framework/react/guide/navigation"
+            },
+            {
+              "label": "路径参数",
+              "to": "framework/react/guide/path-params"
+            },
+            {
+              "label": "搜索参数",
+              "to": "framework/react/guide/search-params"
+            },
+            {
+              "label": "链接选项",
+              "to": "framework/react/guide/link-options"
+            },
+            {
+              "label": "自定义链接",
+              "to": "framework/react/guide/custom-link"
+            },
+            {
+              "label": "数据加载",
+              "to": "framework/react/guide/data-loading"
+            },
+            {
+              "label": "延迟数据加载",
+              "to": "framework/react/guide/deferred-data-loading"
+            },
+            {
+              "label": "外部数据加载",
+              "to": "framework/react/guide/external-data-loading"
+            },
+            {
+              "label": "数据变更",
+              "to": "framework/react/guide/data-mutations"
+            },
+            {
+              "label": "类型安全",
+              "to": "framework/react/guide/type-safety"
+            },
+            {
+              "label": "类型工具",
+              "to": "framework/react/guide/type-utilities"
+            },
+            {
+              "label": "预加载",
+              "to": "framework/react/guide/preloading"
+            },
+            {
+              "label": "文档头管理",
+              "to": "framework/react/guide/document-head-management"
+            },
+            {
+              "label": "路由掩码",
+              "to": "framework/react/guide/route-masking"
+            },
+            {
+              "label": "导航阻止",
+              "to": "framework/react/guide/navigation-blocking"
+            },
+            {
+              "label": "自定义搜索参数序列化",
+              "to": "framework/react/guide/custom-search-param-serialization"
+            },
+            {
+              "label": "历史类型",
+              "to": "framework/react/guide/history-types"
+            },
+            {
+              "label": "路由器上下文",
+              "to": "framework/react/guide/router-context"
+            },
+            {
+              "label": "未找到错误",
+              "to": "framework/react/guide/not-found-errors"
+            },
+            {
+              "label": "认证路由",
+              "to": "framework/react/guide/authenticated-routes"
+            },
+            {
+              "label": "滚动恢复",
+              "to": "framework/react/guide/scroll-restoration"
+            },
+            {
+              "label": "静态路由数据",
+              "to": "framework/react/guide/static-route-data"
+            },
+            {
+              "label": "服务端渲染 (SSR)",
+              "to": "framework/react/guide/ssr"
+            },
+            {
+              "label": "渲染优化",
+              "to": "framework/react/guide/render-optimizations"
+            }
+          ]
+        },
+        {
+          "label": "solid",
+          "children": [
+            {
+              "label": "代码分割",
+              "to": "framework/solid/guide/code-splitting"
+            },
+            {
+              "label": "自动代码分割",
+              "to": "framework/solid/guide/automatic-code-splitting"
+            },
+            {
+              "label": "创建路由器",
+              "to": "framework/solid/guide/creating-a-router"
+            },
+            {
+              "label": "出口 (Outlet)",
+              "to": "framework/solid/guide/outlets"
+            },
+            {
+              "label": "导航",
+              "to": "framework/solid/guide/navigation"
+            },
+            {
+              "label": "路径参数",
+              "to": "framework/solid/guide/path-params"
+            },
+            {
+              "label": "搜索参数",
+              "to": "framework/solid/guide/search-params"
+            },
+            {
+              "label": "链接选项",
+              "to": "framework/solid/guide/link-options"
+            },
+            {
+              "label": "自定义链接",
+              "to": "framework/solid/guide/custom-link"
+            },
+            {
+              "label": "数据加载",
+              "to": "framework/solid/guide/data-loading"
+            },
+            {
+              "label": "延迟数据加载",
+              "to": "framework/solid/guide/deferred-data-loading"
+            },
+            {
+              "label": "外部数据加载",
+              "to": "framework/solid/guide/external-data-loading"
+            },
+            {
+              "label": "数据变更",
+              "to": "framework/solid/guide/data-mutations"
+            },
+            {
+              "label": "类型安全",
+              "to": "framework/solid/guide/type-safety"
+            },
+            {
+              "label": "类型工具",
+              "to": "framework/solid/guide/type-utilities"
+            },
+            {
+              "label": "预加载",
+              "to": "framework/solid/guide/preloading"
+            },
+            {
+              "label": "文档头管理",
+              "to": "framework/solid/guide/document-head-management"
+            },
+            {
+              "label": "路由掩码",
+              "to": "framework/solid/guide/route-masking"
+            },
+            {
+              "label": "导航阻止",
+              "to": "framework/solid/guide/navigation-blocking"
+            },
+            {
+              "label": "自定义搜索参数序列化",
+              "to": "framework/solid/guide/custom-search-param-serialization"
+            },
+            {
+              "label": "历史类型",
+              "to": "framework/solid/guide/history-types"
+            },
+            {
+              "label": "路由器上下文",
+              "to": "framework/solid/guide/router-context"
+            },
+            {
+              "label": "未找到错误",
+              "to": "framework/solid/guide/not-found-errors"
+            },
+            {
+              "label": "认证路由",
+              "to": "framework/solid/guide/authenticated-routes"
+            },
+            {
+              "label": "滚动恢复",
+              "to": "framework/solid/guide/scroll-restoration"
+            },
+            {
+              "label": "静态路由数据",
+              "to": "framework/solid/guide/static-route-data"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "API",
+      "children": [
+        {
+          "label": "基于文件的路由",
+          "to": "api/file-based-routing"
+        }
+      ],
+      "frameworks": [
+        {
+          "label": "react",
+          "children": [
+            {
+              "label": "路由器",
+              "to": "framework/react/api/router"
+            }
+          ]
+        },
+        {
+          "label": "solid",
+          "children": []
+        }
+      ]
+    },
+    {
+      "label": "ESLint",
+      "children": [
+        {
+          "label": "ESLint 插件路由器",
+          "to": "eslint/eslint-plugin-router"
+        },
+        {
+          "label": "创建路由属性顺序",
+          "to": "eslint/create-route-property-order"
+        }
+      ]
+    },
+    {
+      "label": "路由器示例",
+      "children": [],
+      "frameworks": [
+        {
+          "label": "react",
+          "children": [
+            {
+              "label": "快速开始 (基于文件)",
+              "to": "framework/react/examples/quickstart-file-based"
+            },
+            {
+              "label": "快速开始 (基于代码)",
+              "to": "framework/react/examples/quickstart"
+            },
+            {
+              "label": "基础 (基于文件)",
+              "to": "framework/react/examples/basic-file-based"
+            },
+            {
+              "label": "基础 (基于代码)",
+              "to": "framework/react/examples/basic"
+            },
+            {
+              "label": "基础 + React Query (基于文件)",
+              "to": "framework/react/examples/basic-react-query-file-based"
+            },
+            {
+              "label": "基础 + React Query (基于代码)",
+              "to": "framework/react/examples/basic-react-query"
+            },
+            {
+              "label": "基础 + 服务端渲染 (SSR) (基于文件)",
+              "to": "framework/react/examples/basic-ssr-file-based"
+            },
+            {
+              "label": "基础 + 流式服务端渲染 (基于文件)",
+              "to": "framework/react/examples/basic-ssr-streaming-file-based"
+            },
+            {
+              "label": "厨房水槽 (基于文件)",
+              "to": "framework/react/examples/kitchen-sink-file-based"
+            },
+            {
+              "label": "厨房水槽 (基于代码)",
+              "to": "framework/react/examples/kitchen-sink"
+            },
+            {
+              "label": "厨房水槽 + React Query (基于文件)",
+              "to": "framework/react/examples/kitchen-sink-react-query-file-based"
+            },
+            {
+              "label": "厨房水槽 + React Query (基于代码)",
+              "to": "framework/react/examples/kitchen-sink-react-query"
+            },
+            {
+              "label": "位置掩码",
+              "to": "framework/react/examples/location-masking"
+            },
+            {
+              "label": "认证路由",
+              "to": "framework/react/examples/authenticated-routes"
+            },
+            {
+              "label": "滚动恢复",
+              "to": "framework/react/examples/scroll-restoration"
+            },
+            {
+              "label": "延迟数据",
+              "to": "framework/react/examples/deferred-data"
+            },
+            {
+              "label": "导航阻止",
+              "to": "framework/react/examples/navigation-blocking"
+            },
+            {
+              "label": "视图过渡",
+              "to": "framework/react/examples/view-transitions"
+            },
+            {
+              "label": "与 tRPC",
+              "to": "framework/react/examples/with-trpc"
+            },
+            {
+              "label": "与 tRPC + React Query",
+              "to": "framework/react/examples/with-trpc-react-query"
+            },
+            {
+              "label": "Monorepo 基础",
+              "to": "framework/react/examples/router-monorepo-simple"
+            },
+            {
+              "label": "Monorepo 基础 (带懒加载)",
+              "to": "framework/react/examples/router-monorepo-simple-lazy"
+            },
+            {
+              "label": "Monorepo 与 React Query",
+              "to": "framework/react/examples/router-monorepo-react-query"
+            }
+          ]
+        },
+        {
+          "label": "solid",
+          "children": [
+            {
+              "label": "快速开始 (基于文件)",
+              "to": "framework/solid/examples/quickstart-file-based"
+            },
+            {
+              "label": "基础 (基于文件)",
+              "to": "framework/solid/examples/basic-file-based"
+            },
+            {
+              "label": "基础 + Solid Query (基于文件)",
+              "to": "framework/solid/examples/basic-solid-query-file-based"
+            },
+            {
+              "label": "基础 + Solid Query (基于代码)",
+              "to": "framework/solid/examples/basic-solid-query"
+            },
+            {
+              "label": "厨房水槽 (基于文件)",
+              "to": "framework/solid/examples/kitchen-sink-file-based"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
