@@ -1,16 +1,16 @@
 ---
-source-updated-at: 2025-03-26T16:13:53.000Z
-translation-updated-at: 2025-04-07T03:52:09.000Z
-title: 从零开始构建
+source-updated-at: '2025-04-23T01:22:58.000Z'
+translation-updated-at: '2025-05-06T22:19:46.779Z'
 id: build-from-scratch
+title: 从零开始构建
 ---
 
 > [!NOTE]
-> 如果你选择通过示例项目或克隆项目快速开始，可以跳过本指南，直接进入[基础知识学习](../learn-the-basics)指南。
+> 如果选择通过示例或克隆项目快速启动，可以跳过本指南，直接进入[基础知识学习](../learn-the-basics)指南。
 
-_你想从零开始构建一个 TanStack Start 项目吗？_
+_想要从零开始构建一个 TanStack Start 项目吗？_
 
-本指南将帮助你构建一个**非常**基础的 TanStack Start 网络应用。我们将共同使用 TanStack Start 实现以下功能：
+本指南将帮助你构建一个**非常**基础的 TanStack Start 网络应用。我们将一起使用 TanStack Start 完成以下功能：
 
 - 提供一个首页...
 - 显示一个计数器...
@@ -27,13 +27,13 @@ npm init -y
 ```
 
 > [!NOTE]
-> 这些示例中我们使用 `npm`，但你可以选择自己喜欢的包管理器替代。
+> 示例中使用的是 `npm`，但你可以选择自己喜欢的包管理器替代。
 
 ## TypeScript 配置
 
-我们强烈推荐在 TanStack Start 中使用 TypeScript。创建一个 `tsconfig.json` 文件，至少包含以下配置：
+强烈建议在 TanStack Start 中使用 TypeScript。创建一个 `tsconfig.json` 文件，至少包含以下配置：
 
-```jsonc
+```json
 {
   "compilerOptions": {
     "jsx": "react-jsx",
@@ -41,19 +41,19 @@ npm init -y
     "module": "ESNext",
     "target": "ES2022",
     "skipLibCheck": true,
-    "strictNullChecks": true,
-  },
+    "strictNullChecks": true
+  }
 }
 ```
 
 > [!NOTE]
-> 启用 `verbatimModuleSyntax` 可能导致服务端打包内容泄漏到客户端打包中，建议保持此选项禁用。
+> 启用 `verbatimModuleSyntax` 可能导致服务端代码泄漏到客户端包中，建议保持此选项禁用。
 
-## 安装依赖项
+## 安装依赖
 
-TanStack Start（当前版本\*）基于 [Vinxi](https://vinxi.vercel.app/) 和 [TanStack Router](https://tanstack.com/router)，需要安装这些依赖项。
+TanStack Start（当前版本\*）基于 [Vinxi](https://vinxi.vercel.app/) 和 [TanStack Router](https://tanstack.com/router)，需要安装这些依赖。
 
-> [!NOTE] \*在 1.0.0 版本发布前，Vinxi 将被移除，TanStack 将仅依赖 Vite 和 Nitro。使用 Vinxi 的命令和 API 可能会被 Vite 插件或专用的 TanStack Start 命令行工具替代。
+> [!NOTE] \*在 1.0.0 版本发布前，Vinxi 将被移除，TanStack 将仅依赖 Vite 和 Nitro。使用 Vinxi 的命令和 API 可能会被 Vite 插件或专用的 TanStack Start CLI 替代。
 
 运行以下命令安装：
 
@@ -61,7 +61,7 @@ TanStack Start（当前版本\*）基于 [Vinxi](https://vinxi.vercel.app/) 和 
 npm i @tanstack/react-start @tanstack/react-router vinxi
 ```
 
-同时需要安装 React 和 Vite React 插件：
+还需要安装 React 和 Vite React 插件：
 
 ```shell
 npm i react react-dom
@@ -76,7 +76,7 @@ npm i -D typescript @types/react @types/react-dom
 
 ## 更新配置文件
 
-更新 `package.json` 以使用 Vinxi 的命令行工具并设置 `"type": "module"`：
+更新 `package.json`，使用 Vinxi 的 CLI 并设置 `"type": "module"`：
 
 ```json
 {
@@ -112,9 +112,9 @@ export default defineConfig({
 
 TanStack Start 需要四个核心文件：
 
-1. 路由器配置
-2. 服务端入口文件
-3. 客户端入口文件
+1. 路由配置
+2. 服务端入口
+3. 客户端入口
 4. 应用根组件
 
 配置完成后，文件结构如下：
@@ -134,12 +134,12 @@ TanStack Start 需要四个核心文件：
 └── `tsconfig.json`
 ```
 
-## 路由器配置
+## 路由配置
 
-此文件用于配置 TanStack Router 在 Start 中的行为。你可以在此配置从默认的[预加载功能](/router/latest/docs/framework/react/guide/preloading)到[缓存过期策略](/router/latest/docs/framework/react/guide/data-loading)等所有内容。
+此文件定义 Start 中使用的 TanStack Router 行为，可配置从默认的[预加载功能](/router/latest/docs/framework/react/guide/preloading)到[缓存过期策略](/router/latest/docs/framework/react/guide/data-loading)等所有内容。
 
 > [!NOTE]
-> 初始时不会有 `routeTree.gen.ts` 文件，该文件将在首次运行 TanStack Start 时生成。
+> 初始时不会有 `routeTree.gen.ts` 文件，首次运行 TanStack Start 时会自动生成。
 
 ```tsx
 // app/router.tsx
@@ -162,9 +162,9 @@ declare module '@tanstack/react-router' {
 }
 ```
 
-## 服务端入口文件
+## 服务端入口
 
-由于 TanStack Start 是[服务端渲染 (SSR)](https://unicorn-utterances.com/posts/what-is-ssr-and-ssg) 框架，我们需要将路由器信息传递到服务端入口：
+由于 TanStack Start 是[服务端渲染 (SSR)](https://unicorn-utterances.com/posts/what-is-ssr-and-ssg)框架，需要将路由信息传递到服务端入口：
 
 ```tsx
 // app/ssr.tsx
@@ -182,11 +182,9 @@ export default createStartHandler({
 })(defaultStreamHandler)
 ```
 
-这让我们能在用户访问特定路由时知道需要执行哪些路由和加载器。
+## 客户端入口
 
-## 客户端入口文件
-
-现在我们需要在路由解析到客户端后，注入客户端 JavaScript 进行水合 (Hydration)：
+现在需要一种方式在路由解析到客户端后激活客户端 JavaScript：
 
 ```tsx
 // app/client.tsx
@@ -200,11 +198,9 @@ const router = createRouter()
 hydrateRoot(document, <StartClient router={router} />)
 ```
 
-这使得用户初始服务端请求完成后能启动客户端路由。
-
 ## 应用根组件
 
-最后创建应用的根组件，这是所有其他路由的入口点：
+最后创建应用的根组件，它将包裹所有其他路由：
 
 ```tsx
 // app/routes/__root.tsx
@@ -259,7 +255,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
 
 ## 编写第一个路由
 
-基础模板搭建完成后，可以在 `app/routes` 目录下创建第一个路由文件：
+基础模板设置完成后，可以在 `app/routes` 目录中创建第一个路由：
 
 ```tsx
 // app/routes/index.tsx
@@ -306,14 +302,14 @@ function Home() {
         })
       }}
     >
-      当前值：{state}，点击加1
+      当前值 {state}，点击加 1？
     </button>
   )
 }
 ```
 
-大功告成！🤯 你现在已经成功设置了一个 TanStack Start 项目并编写了第一个路由。🎉
+大功告成！🤯 你已经成功搭建了 TanStack Start 项目并编写了第一个路由。🎉
 
-运行 `npm run dev` 启动服务器，访问 `http://localhost:3000` 查看效果。
+现在可以运行 `npm run dev` 启动服务器，访问 `http://localhost:3000` 查看效果。
 
-想部署应用？查看[托管指南](./hosting.md)。
+想要部署应用？请查看[托管指南](./hosting.md)。

@@ -1,17 +1,17 @@
 ---
-source-updated-at: 2025-02-25T21:17:33.000Z
-translation-updated-at: 2025-04-05T03:41:48.000Z
-title: 托管
+source-updated-at: '2025-05-01T02:26:59.000Z'
+translation-updated-at: '2025-05-06T22:19:28.728Z'
 id: hosting
+title: 托管部署
 ---
 
-托管部署是将您的应用程序发布到互联网上，以便用户能够访问的过程。这是任何网页开发项目的关键环节，确保您的应用程序能够面向全球提供服务。TanStack Start 基于 [Nitro](https://nitro.unjs.io/) 构建，这是一个功能强大的服务器工具包，能够将网页应用程序部署到任何地方。Nitro 使 TanStack Start 能够为任何托管服务提供商提供 SSR、流式传输和 hydration 的统一 API。
+托管 (Hosting) 是将您的应用程序部署到互联网上供用户访问的过程。这是任何 Web 开发项目的关键环节，确保您的应用能够面向全球可用。TanStack Start 基于 [Nitro](https://nitro.unjs.io/) 构建，这是一个强大的服务器工具包，可在任何地方部署 Web 应用。Nitro 使 TanStack Start 能够为任何托管服务商提供统一的 服务端渲染 (SSR)、流式传输 (streaming) 和注水 (hydration) API。
 
-## 我应该使用什么？
+## 应该选择什么？
 
-TanStack Start **设计为与任何托管服务提供商兼容**，因此如果您已有心仪的托管服务提供商，您可以使用 TanStack Start 提供的全栈 API 将应用程序部署到那里。
+TanStack Start **设计为兼容任何托管服务商**，如果您已有心仪的托管平台，可以直接使用 TanStack Start 提供的全栈 API 进行部署。
 
-然而，由于托管是影响应用程序性能、可靠性和可扩展性的最关键因素之一，我们强烈推荐使用我们的官方托管合作伙伴 [Netlify](https://www.netlify.com?utm_source=tanstack)。
+但由于托管服务直接影响应用的性能、可靠性和扩展性，我们强烈推荐使用官方托管合作伙伴 [Netlify](https://www.netlify.com?utm_source=tanstack)。
 
 ## 什么是 Netlify？
 
@@ -23,30 +23,30 @@ TanStack Start **设计为与任何托管服务提供商兼容**，因此如果�
   </picture>
 </a>
 
-Netlify 是一个领先的托管平台，为您的网页应用程序提供快速、安全且可靠的部署环境。通过 Netlify，您只需点击几下即可部署您的 TanStack Start 应用程序，并享受全球边缘网络、自动扩展以及与 GitHub 和 GitLab 无缝集成等功能。Netlify 旨在让您的开发流程从本地开发到生产部署尽可能顺畅。
+Netlify 是领先的托管平台，为 Web 应用部署提供快速、安全且可靠的环境。通过 Netlify，您只需点击几下即可部署 TanStack Start 应用，并享受全球边缘网络、自动扩展以及与 GitHub/GitLab 无缝集成等特性。Netlify 旨在让您的开发流程从本地调试到生产部署都无比顺畅。
 
-- 要了解更多关于 Netlify 的信息，请访问 [Netlify 官网](https://www.netlify.com?utm_source=tanstack)
-- 要注册，请访问 [Netlify 控制台](https://www.netlify.com/signup?utm_source=tanstack)
+- 了解更多：[Netlify 官网](https://www.netlify.com?utm_source=tanstack)
+- 立即注册：[Netlify 控制台](https://www.netlify.com/signup?utm_source=tanstack)
 
-## 部署
+## 部署指南
 
 > [!WARNING]
-> 本页面仍在完善中。我们将持续更新此页面，提供更多关于不同托管服务提供商的部署指南！
+> 本页面仍在完善中。我们将持续更新不同托管服务商的部署指南！
 
-当部署 TanStack Start 应用程序时，`app.config.ts` 文件中的 `server.preset` 值决定了部署目标。部署目标可以设置为以下值之一：
+部署 TanStack Start 应用时，`app.config.ts` 文件中的 `server.preset` 值决定了部署目标。可选的部署目标包括：
 
 - [`netlify`](#netlify): 部署到 Netlify
 - [`vercel`](#vercel): 部署到 Vercel
 - [`cloudflare-pages`](#cloudflare-pages): 部署到 Cloudflare Pages
 - [`node-server`](#nodejs): 部署到 Node.js 服务器
 - [`bun`](#bun): 部署到 Bun 服务器
-- ... 更多即将推出！
+- ... 更多选项即将推出！
 
-一旦您选择了部署目标，您可以按照以下部署指南将您的 TanStack Start 应用程序部署到您选择的托管服务提供商。
+选定部署目标后，您可参照以下指南将应用部署到对应平台。
 
 ### Netlify
 
-在您的 `app.config.ts` 文件中将 `server.preset` 值设置为 `netlify`。
+在 `app.config.ts` 中设置 `server.preset` 为 `netlify`：
 
 ```ts
 // app.config.ts
@@ -59,17 +59,17 @@ export default defineConfig({
 })
 ```
 
-或者您可以在构建应用程序时使用 `build` 命令的 `--preset` 标志来指定部署目标：
+或使用 `build` 命令时通过 `--preset` 参数指定：
 
 ```sh
 npm run build --preset netlify
 ```
 
-使用 Netlify 的一键部署流程部署您的应用程序，即可完成！
+通过 Netlify 的一键部署流程完成发布即可。
 
 ### Vercel
 
-将您的 TanStack Start 应用程序部署到 Vercel 非常简单直接。只需在您的 `app.config.ts` 文件中将 `server.preset` 值设置为 `vercel`，即可准备将应用程序部署到 Vercel。
+在 `app.config.ts` 中设置 `server.preset` 为 `vercel`：
 
 ```ts
 // app.config.ts
@@ -82,29 +82,29 @@ export default defineConfig({
 })
 ```
 
-或者您可以在构建应用程序时使用 `build` 命令的 `--preset` 标志来指定部署目标：
+或使用构建命令时指定：
 
 ```sh
 npm run build --preset vercel
 ```
 
-使用 Vercel 的一键部署流程部署您的应用程序，即可完成！
+通过 Vercel 的一键部署流程完成发布。
 
 ### Cloudflare Pages
 
-部署到 Cloudflare Pages 时，您需要完成一些额外的步骤，用户才能开始使用您的应用程序。
+部署到 Cloudflare Pages 需要额外配置：
 
-1. 安装
+1. 安装依赖
 
-首先您需要安装 `unenv`
+首先安装 `unenv`：
 
 ```sh
 npm install unenv
 ```
 
-2. 更新 `app.config.ts`
+2. 更新配置文件
 
-在您的 `app.config.ts` 文件中将 `server.preset` 值设置为 `cloudflare-pages`，并将 `server.unenv` 值设置为 `unenv` 中的 `cloudflare`。
+在 `app.config.ts` 中设置参数：
 
 ```ts
 // app.config.ts
@@ -129,11 +129,11 @@ compatibility_flags = ["nodejs_compat"]
 compatibility_date = "2024-11-13"
 ```
 
-使用 Cloudflare Pages 的一键部署流程部署您的应用程序，即可完成！
+最后通过 Cloudflare Pages 的一键部署完成发布。
 
 ### Node.js
 
-在您的 `app.config.ts` 文件中将 `server.preset` 值设置为 `node-server`。
+在 `app.config.ts` 中设置 `server.preset` 为 `node-server`：
 
 ```ts
 // app.config.ts
@@ -145,35 +145,29 @@ export default defineConfig({
   },
 })
 
-// 或者您可以在构建应用程序时使用 `build` 命令的 `--preset` 标志
-// 来指定部署目标：
+// 或通过构建命令指定：
 // npm run build --preset node-server
 ```
 
-然后您可以运行以下命令来构建并启动您的应用程序：
+构建并启动应用：
 
 ```sh
 npm run build
-```
-
-现在您可以将应用程序部署到 Node.js 服务器。通过运行以下命令启动您的应用程序：
-
-```sh
 node .output/server/index.mjs
 ```
 
 ### Bun
 
 > [!IMPORTANT]
-> 目前，Bun 特定的部署指南仅适用于 React 19。如果您使用的是 React 18，请参考 [Node.js](#nodejs) 部署指南。
+> 当前 Bun 部署指南仅支持 React 19。若使用 React 18 请参照 [Node.js](#nodejs) 指南。
 
-确保您的 `package.json` 文件中的 `react` 和 `react-dom` 包版本设置为 19.0.0 或更高。如果没有，请运行以下命令升级这些包：
+确保 `package.json` 中 React 相关依赖版本 ≥ 19.0.0，否则执行：
 
 ```sh
 npm install react@rc react-dom@rc
 ```
 
-在您的 `app.config.ts` 文件中将 `server.preset` 值设置为 `bun`。
+在 `app.config.ts` 中设置 `server.preset` 为 `bun`：
 
 ```ts
 // app.config.ts
@@ -185,19 +179,13 @@ export default defineConfig({
   },
 })
 
-// 或者您可以在构建应用程序时使用 `build` 命令的 `--preset` 标志
-// 来指定部署目标：
+// 或通过构建命令指定：
 // npm run build --preset bun
 ```
 
-然后您可以运行以下命令来构建并启动您的应用程序：
+构建并启动应用：
 
 ```sh
 bun run build
-```
-
-现在您可以将应用程序部署到 Bun 服务器。通过运行以下命令启动您的应用程序：
-
-```sh
 bun run .output/server/index.mjs
 ```
