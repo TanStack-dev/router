@@ -1,11 +1,11 @@
 ---
-source-updated-at: 2025-01-30T04:47:58.000Z
-translation-updated-at: 2025-04-05T03:38:08.000Z
-title: 路由器
+source-updated-at: '2025-04-13T08:50:44.000Z'
+translation-updated-at: '2025-05-06T22:01:52.101Z'
 id: router
+title: 路由器
 ---
 
-- 功能函数
+- 函数
   - [`createFileRoute`](./router/createFileRouteFunction.md)
   - [`createLazyFileRoute`](./router/createLazyFileRouteFunction.md)
   - [`createRootRoute`](./router/createRootRouteFunction.md)
@@ -28,13 +28,14 @@ id: router
   - [`<Await>`](./router/awaitComponent.md)
   - [`<CatchBoundary>`](./router/catchBoundaryComponent.md)
   - [`<CatchNotFound>`](./router/catchNotFoundComponent.md)
+  - [`<ClientOnly>`](./router/clientOnlyComponent.md)
   - [`<DefaultGlobalNotFound>`](./router/defaultGlobalNotFoundComponent.md)
   - [`<ErrorComponent>`](./router/errorComponentComponent.md)
   - [`<Link>`](./router/linkComponent.md)
   - [`<MatchRoute>`](./router/matchRouteComponent.md)
   - [`<Navigate>`](./router/navigateComponent.md)
   - [`<Outlet>`](./router/outletComponent.md)
-- 钩子函数
+- 钩子 (Hooks)
   - [`useAwaited`](./router/useAwaitedHook.md)
   - [`useBlocker`](./router/useBlockerHook.md)
   - [`useCanGoBack`](./router//useCanGoBack.md)
@@ -53,7 +54,7 @@ id: router
   - [`useRouter`](./router/useRouterHook.md)
   - [`useRouterState`](./router/useRouterStateHook.md)
   - [`useSearch`](./router/useSearchHook.md)
-- 类型定义
+- 类型 (Types)
   - [`ActiveLinkOptions 类型`](./router/ActiveLinkOptionsType.md)
   - [`AsyncRouteComponent 类型`](./router/AsyncRouteComponentType.md)
   - [`HistoryState 接口`](./router/historyStateInterface.md)

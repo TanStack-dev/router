@@ -1,6 +1,6 @@
 ---
 source-updated-at: '2025-03-08T12:20:26.000Z'
-translation-updated-at: '2025-04-05T21:27:23.000Z'
+translation-updated-at: '2025-05-06T22:01:00.534Z'
 title: Devtools
 ref: docs/router/zh-hans/framework/react/devtools.md
 replace:

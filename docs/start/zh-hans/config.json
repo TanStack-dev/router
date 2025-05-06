@@ -30,7 +30,7 @@
               "to": "framework/react/build-from-scratch"
             },
             {
-              "label": "学习基础知识",
+              "label": "基础知识",
               "to": "framework/react/learn-the-basics"
             },
             {
@@ -54,11 +54,11 @@
               "to": "framework/react/ssr"
             },
             {
-              "label": "托管",
+              "label": "托管部署",
               "to": "framework/react/hosting"
             },
             {
-              "label": "鉴权",
+              "label": "身份验证",
               "to": "framework/react/authentication"
             },
             {
@@ -99,7 +99,7 @@
               "to": "framework/solid/build-from-scratch"
             },
             {
-              "label": "学习基础知识",
+              "label": "基础知识",
               "to": "framework/solid/learn-the-basics"
             },
             {
@@ -123,11 +123,11 @@
               "to": "framework/solid/ssr"
             },
             {
-              "label": "托管",
+              "label": "托管部署",
               "to": "framework/solid/hosting"
             },
             {
-              "label": "鉴权",
+              "label": "身份验证",
               "to": "framework/solid/authentication"
             },
             {
@@ -158,23 +158,23 @@
           "label": "react",
           "children": [
             {
-              "label": "基础",
+              "label": "基础示例",
               "to": "framework/react/examples/start-basic"
             },
             {
-              "label": "基础 + React Query",
+              "label": "基础示例 + React Query",
               "to": "framework/react/examples/start-basic-react-query"
             },
             {
-              "label": "基础 + Clerk 鉴权",
+              "label": "基础示例 + Clerk 身份验证",
               "to": "framework/react/examples/start-clerk-basic"
             },
             {
-              "label": "基础 + DIY 鉴权",
+              "label": "基础示例 + 自定义身份验证",
               "to": "framework/react/examples/start-basic-auth"
             },
             {
-              "label": "基础 + Supabase 鉴权",
+              "label": "基础示例 + Supabase 身份验证",
               "to": "framework/react/examples/start-supabase-basic"
             },
             {
@@ -186,6 +186,10 @@
               "to": "framework/react/examples/start-trellaux"
             },
             {
+              "label": "WorkOS",
+              "to": "framework/react/examples/start-workos"
+            },
+            {
               "label": "Material UI",
               "to": "framework/react/examples/start-material-ui"
             }
@@ -195,11 +199,11 @@
           "label": "solid",
           "children": [
             {
-              "label": "裸机",
+              "label": "基础框架",
               "to": "framework/solid/examples/start-bare"
             },
             {
-              "label": "基础",
+              "label": "基础示例",
               "to": "framework/solid/examples/start-basic"
             }
           ]
