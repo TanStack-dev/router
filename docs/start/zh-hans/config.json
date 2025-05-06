@@ -34,19 +34,19 @@
               "to": "framework/react/learn-the-basics"
             },
             {
-              "label": "服务端函数",
+              "label": "服务端函数 (Server Functions)",
               "to": "framework/react/server-functions"
             },
             {
-              "label": "静态服务端函数",
+              "label": "静态服务端函数 (Static Server Functions)",
               "to": "framework/react/static-server-functions"
             },
             {
-              "label": "中间件",
+              "label": "中间件 (Middleware)",
               "to": "framework/react/middleware"
             },
             {
-              "label": "API 路由",
+              "label": "API 路由 (API Routes)",
               "to": "framework/react/api-routes"
             },
             {
@@ -54,27 +54,27 @@
               "to": "framework/react/ssr"
             },
             {
-              "label": "托管部署",
+              "label": "托管部署 (Hosting)",
               "to": "framework/react/hosting"
             },
             {
-              "label": "身份验证",
+              "label": "身份验证 (Authentication)",
               "to": "framework/react/authentication"
             },
             {
-              "label": "数据库",
+              "label": "数据库 (Databases)",
               "to": "framework/react/databases"
             },
             {
-              "label": "可观测性",
+              "label": "可观测性 (Observability)",
               "to": "framework/react/observability"
             },
             {
-              "label": "静态预渲染",
+              "label": "静态预渲染 (Static Prerendering)",
               "to": "framework/react/static-prerendering"
             },
             {
-              "label": "路径别名",
+              "label": "路径别名 (Path Aliases)",
               "to": "framework/react/path-aliases"
             }
           ]
@@ -103,19 +103,19 @@
               "to": "framework/solid/learn-the-basics"
             },
             {
-              "label": "服务端函数",
+              "label": "服务端函数 (Server Functions)",
               "to": "framework/solid/server-functions"
             },
             {
-              "label": "静态服务端函数",
+              "label": "静态服务端函数 (Static Server Functions)",
               "to": "framework/solid/static-server-functions"
             },
             {
-              "label": "中间件",
+              "label": "中间件 (Middleware)",
               "to": "framework/solid/middleware"
             },
             {
-              "label": "API 路由",
+              "label": "API 路由 (API Routes)",
               "to": "framework/solid/api-routes"
             },
             {
@@ -123,27 +123,27 @@
               "to": "framework/solid/ssr"
             },
             {
-              "label": "托管部署",
+              "label": "托管部署 (Hosting)",
               "to": "framework/solid/hosting"
             },
             {
-              "label": "身份验证",
+              "label": "身份验证 (Authentication)",
               "to": "framework/solid/authentication"
             },
             {
-              "label": "数据库",
+              "label": "数据库 (Databases)",
               "to": "framework/solid/databases"
             },
             {
-              "label": "可观测性",
+              "label": "可观测性 (Observability)",
               "to": "framework/solid/observability"
             },
             {
-              "label": "静态预渲染",
+              "label": "静态预渲染 (Static Prerendering)",
               "to": "framework/solid/static-prerendering"
             },
             {
-              "label": "路径别名",
+              "label": "路径别名 (Path Aliases)",
               "to": "framework/solid/path-aliases"
             }
           ]
@@ -205,6 +205,21 @@
             {
               "label": "基础示例",
               "to": "framework/solid/examples/start-basic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "教程",
+      "children": [],
+      "frameworks": [
+        {
+          "label": "react",
+          "children": [
+            {
+              "label": "文件读写操作",
+              "to": "framework/react/reading-writing-file"
             }
           ]
         }

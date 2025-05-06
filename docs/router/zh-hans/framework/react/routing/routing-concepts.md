@@ -1,14 +1,16 @@
 ---
-source-updated-at: 2025-03-18T21:44:40.000Z
-translation-updated-at: 2025-04-05T03:14:15.000Z
+source-updated-at: '2025-05-01T22:17:05.000Z'
+translation-updated-at: '2025-05-06T22:18:29.852Z'
 title: 路由概念
 ---
 
-TanStack Router 支持多种强大的路由概念，可帮助您轻松构建复杂动态的路由系统。以下将详细介绍这些核心概念。
+TanStack Router 支持多种强大的路由概念，让您能够轻松构建复杂且动态的路由系统。
+
+这些概念各自实用且强大，我们将在后续章节中逐一深入探讨。
 
 ## 路由结构剖析
 
-除[根路由](#根路由)外，所有路由都通过`createFileRoute`函数配置，该函数在使用基于文件的路由时提供类型安全：
+除[根路由](#the-root-route)外，所有其他路由都通过 `createFileRoute` 函数配置，该函数在使用基于文件的路由时提供类型安全：
 
 ```tsx
 import { createFileRoute } from '@tanstack/react-router'
@@ -18,30 +20,30 @@ export const Route = createFileRoute('/posts')({
 })
 ```
 
-该函数接收一个参数——字符串形式的文件路由路径。
+`createFileRoute` 函数接收一个参数，即文件路由的路径字符串。
 
-**❓❓❓ "需要手动传递路由文件路径？"**
+**❓❓❓ "等等，需要手动将路由文件的路径传给 `createFileRoute`？"**
 
-是的！但请放心，这个路径会通过**TanStack Router打包插件或CLI工具自动生成维护**。当您创建、移动或重命名路由时，路径会自动更新。
+是的！但请放心，这个路径**会通过 TanStack Router Bundler Plugin 或 Router CLI 自动生成和管理**。因此，当您创建新路由、移动或重命名路由时，路径会自动更新。
 
-路径参数的存在是为了实现TanStack Router强大的类型安全功能。没有这个路径，TypeScript就无法识别当前文件位置！（我们希望TypeScript原生支持此功能，但目前尚未实现🤷‍♂️）
+这个路径名的存在与 TanStack Router 强大的类型安全特性密切相关。没有这个路径名，TypeScript 将无法识别当前文件！（我们希望 TypeScript 能内置此功能，但目前尚未实现 🤷‍♂️）
 
 ## 根路由
 
-根路由是整个路由树的顶层节点，包含所有子路由：
+根路由是整个路由树的最顶层路由，封装了所有其他子路由。
 
-- 没有路径参数
+- 它没有路径
 - **始终**匹配
-- 其`component`**始终**渲染
+- 其 `component` **始终**渲染
 
-虽然根路由没有路径，但它拥有与其他路由相同的功能：
+尽管没有路径，根路由仍拥有与其他路由相同的功能，包括：
 
-- 组件渲染
-- 数据加载器
+- 组件
+- 加载器
 - 搜索参数验证
 - 等等
 
-创建根路由需调用`createRootRoute()`并导出为`Route`变量：
+要创建根路由，调用 `createRootRoute()` 函数并在路由文件中将其导出为 `Route` 变量：
 
 ```tsx
 // 标准根路由
@@ -59,15 +61,16 @@ export interface MyRouterContext {
 export const Route = createRootRouteWithContext<MyRouterContext>()
 ```
 
-关于上下文更多信息，请参阅[路由上下文](../guide/router-context.md)指南。
+要了解更多关于 TanStack Router 上下文的信息，请参阅[路由上下文](../guide/router-context.md)指南。
 
 ## 基础路由
 
-基础路由精确匹配特定路径，如`/about`、`/settings/notifications`等。
+基础路由匹配特定路径，例如 `/about`、`/settings`、`/settings/notifications` 都是基础路由，因为它们精确匹配路径。
 
-示例`/about`路由：
+来看一个 `/about` 路由示例：
 
 ```tsx
+// about.tsx
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/about')({
@@ -75,38 +78,39 @@ export const Route = createFileRoute('/about')({
 })
 
 function AboutComponent() {
-  return <div>关于页面</div>
+  return <div>About</div>
 }
 ```
 
-基础路由简单直接，精确匹配路径并渲染对应组件。
+基础路由简单直接。它们精确匹配路径并渲染提供的组件。
 
 ## 索引路由
 
-索引路由在其父路由**精确匹配且无子路由匹配**时生效。
+索引路由专门在其父路由**精确匹配且无子路由匹配**时生效。
 
-`/posts`的索引路由示例：
+来看一个 `/posts` URL 的索引路由示例：
 
 ```tsx
+// posts.index.tsx
 import { createFileRoute } from '@tanstack/react-router'
 
-// 注意尾部斜杠用于标识索引路由
+// 注意尾部斜杠，用于定位索引路由
 export const Route = createFileRoute('/posts/')({
   component: PostsIndexComponent,
 })
 
 function PostsIndexComponent() {
-  return <div>请选择文章！</div>
+  return <div>请选择一篇文章！</div>
 }
 ```
 
-当URL为`/posts`时匹配此路由。
+当 URL 精确为 `/posts` 时，此路由将被匹配。
 
 ## 动态路由段
 
-以`$`开头的路径段是动态段，会将该URL部分捕获到`params`对象中。例如`/posts/123`会匹配`/posts/$postId`路由，且`params`为`{ postId: '123' }`。
+以 `$` 开头后跟标签的路由路径段是动态的，并将该部分 URL 捕获到 `params` 对象中供应用程序使用。例如，路径名 `/posts/123` 将匹配 `/posts/$postId` 路由，且 `params` 对象为 `{ postId: '123' }`。
 
-这些参数可在路由配置和组件中使用：
+这些参数可在路由配置和组件中使用！来看一个 `posts.$postId.tsx` 路由示例：
 
 ```tsx
 import { createFileRoute } from '@tanstack/react-router'
@@ -114,21 +118,24 @@ import { createFileRoute } from '@tanstack/react-router'
 export const Route = createFileRoute('/posts/$postId')({
   // 在加载器中
   loader: ({ params }) => fetchPost(params.postId),
-  // 在组件中
+  // 或在组件中
   component: PostComponent,
 })
 
 function PostComponent() {
+  // 在组件中！
   const { postId } = Route.useParams()
-  return <div>文章ID: {postId}</div>
+  return <div>文章 ID: {postId}</div>
 }
 ```
 
-> 🧠 动态段可存在于路径的每一级，例如`/posts/$postId/$revisionId`会捕获所有`$`段到`params`对象。
+> � 动态段在路径的**每个**段都有效。例如，您可以有一个路径为 `/posts/$postId/$revisionId` 的路由，每个 `$` 段都会被捕获到 `params` 对象中。
 
-## 通配路由
+## 通配/全捕获路由
 
-仅包含`$`的路径称为通配路由，它会捕获从`$`开始的所有剩余URL路径，并通过特殊的`_splat`属性提供：
+仅包含 `$` 作为路径的路由称为“通配”路由，因为它**始终**捕获从 `$` 到 URL 路径名末尾的**任何**剩余部分。捕获的路径名随后可在 `params` 对象中通过特殊的 `_splat` 属性获取。
+
+例如，以 `files/$` 路径为目标的路由是通配路由。如果 URL 路径名为 `/files/documents/hello-world`，`params` 对象将在特殊的 `_splat` 属性下包含 `documents/hello-world`：
 
 ```js
 {
@@ -136,22 +143,33 @@ function PostComponent() {
 }
 ```
 
-> ⚠️ v1版本中为保持兼容性也支持`*`表示法，v2将移除该特性。
+> ⚠️ 在路由器的 v1 版本中，通配路由也使用 `*` 而非 `_splat` 键以保持向后兼容性。这将在 v2 中移除。
 
-> 🧠 使用`$`是因为`*`在文件名和CLI工具中兼容性不佳。
+> � 为什么使用 `$`？得益于像 Remix 这样的工具，我们了解到尽管 `*` 是最常见的通配符表示字符，但它们与文件名或 CLI 工具的兼容性不佳，因此我们决定改用 `$`。
 
 ## 布局路由
 
-布局路由用于用额外组件和逻辑包装子路由，适用于：
+布局路由用于通过额外的组件和逻辑包装子路由。它们在以下场景中非常有用：
 
-- 为子路由提供统一布局
-- 在显示子路由前强制执行数据加载
-- 验证并提供搜索参数
-- 提供错误回退和加载状态
-- 共享上下文数据
-- 等等
+- 用布局组件包装子路由
+- 在显示任何子路由前强制执行 `loader` 要求
+- 验证并向子路由提供搜索参数
+- 为子路由提供错误组件或待处理元素的回退
+- 向所有子路由提供共享上下文
+- 以及更多！
 
-示例`app.tsx`布局路由：
+来看一个名为 `app.tsx` 的布局路由示例：
+
+```
+routes/
+├── app.tsx
+├── app.dashboard.tsx
+├── app.settings.tsx
+```
+
+在上面的树结构中，`app.tsx` 是一个布局路由，包装了两个子路由 `app.dashboard.tsx` 和 `app.settings.tsx`。
+
+此树结构用于通过布局组件包装子路由：
 
 ```tsx
 import { Outlet, createFileRoute } from '@tanstack/react-router'
@@ -170,7 +188,15 @@ function AppLayoutComponent() {
 }
 ```
 
-也支持目录结构：
+下表展示了基于 URL 将渲染的组件：
+
+| URL 路径         | 组件                     |
+| ---------------- | ------------------------ |
+| `/`              | `<Index>`                |
+| `/app/dashboard` | `<AppLayout><Dashboard>` |
+| `/app/settings`  | `<AppLayout><Settings>`  |
+
+由于 TanStack Router 支持混合扁平化和目录路由，您还可以通过目录中的布局路由来表达应用程序的路由：
 
 ```
 routes/
@@ -180,11 +206,39 @@ routes/
 │   ├── settings.tsx
 ```
 
+在此嵌套树中，`app/route.tsx` 文件是布局路由的配置，包装了两个子路由 `app/dashboard.tsx` 和 `app/settings.tsx`。
+
+布局路由还允许您为动态路由段强制执行组件和加载器逻辑：
+
+```
+routes/
+├── app/users/
+│   ├── $userId/
+|   |   ├── route.tsx
+|   |   ├── index.tsx
+|   |   ├── edit.tsx
+```
+
 ## 无路径布局路由
 
-与布局路由类似，但不需要URL路径匹配。通过前缀`_`标识无路径特性。
+与[布局路由](#layout-routes)类似，无路径布局路由用于通过额外的组件和逻辑包装子路由。然而，无路径布局路由不需要在 URL 中匹配 `path`，用于在不要求 URL 中匹配 `path` 的情况下包装子路由。
 
-示例`_pathlessLayout.tsx`：
+无路径布局路由通过前缀下划线 (`_`) 表示它们是“无路径”的。
+
+> 🧠 `_` 前缀后的路径部分用作路由的 ID，这是必需的，因为每个路由必须唯一可识别，尤其是在使用 TypeScript 时，以避免类型错误并有效实现自动补全。
+
+来看一个名为 `_pathlessLayout.tsx` 的路由示例：
+
+```
+routes/
+├── _pathlessLayout.tsx
+├── _pathlessLayout.a.tsx
+├── _pathlessLayout.b.tsx
+```
+
+在上面的树结构中，`_pathlessLayout.tsx` 是一个无路径布局路由，包装了两个子路由 `_pathlessLayout.a.tsx` 和 `_pathlessLayout.b.tsx`。
+
+`_pathlessLayout.tsx` 路由用于通过无路径布局组件包装子路由：
 
 ```tsx
 import { Outlet, createFileRoute } from '@tanstack/react-router'
@@ -203,13 +257,48 @@ function PathlessLayoutComponent() {
 }
 ```
 
-> 🧠 无路径布局路由不支持动态段匹配。
+下表展示了基于 URL 将渲染的组件：
+
+| URL 路径 | 组件                  |
+| -------- | --------------------- |
+| `/`      | `<Index>`             |
+| `/a`     | `<PathlessLayout><A>` |
+| `/b`     | `<PathlessLayout><B>` |
+
+由于 TanStack Router 支持混合扁平化和目录路由，您还可以通过目录中的无路径布局路由来表达应用程序的路由：
+
+```
+routes/
+├── _pathlessLayout/
+│   ├── route.tsx
+│   ├── a.tsx
+│   ├── b.tsx
+```
+
+然而，与布局路由不同，由于无路径布局路由不基于 URL 路径段匹配，这意味着这些路由不支持在其路径中使用[动态路由段](#dynamic-route-segments)，因此无法在 URL 中匹配。
+
+这意味着您不能这样做：
+
+```
+routes/
+├── _$postId/ ❌
+│   ├── ...
+```
+
+而应该这样做：
+
+```
+routes/
+├── $postId/
+├── _postPathlessLayout/ ✅
+│   ├── ...
+```
 
 ## 非嵌套路由
 
-通过在父路由段后添加`_`创建，使路由脱离父级组件树独立渲染。
+非嵌套路由可通过在父文件路由段后添加 `_` 后缀创建，用于**解除**路由与父级的嵌套关系并渲染其自己的组件树。
 
-示例结构：
+考虑以下扁平路由树：
 
 ```
 routes/
@@ -218,19 +307,88 @@ routes/
 ├── posts_.$postId.edit.tsx
 ```
 
-## 路径分组目录
+下表展示了基于 URL 将渲染的组件：
 
-使用`()`对路由文件进行纯组织性分组，不影响实际路由结构。
+| URL 路径          | 组件                         |
+| ----------------- | ---------------------------- |
+| `/posts`          | `<Posts>`                    |
+| `/posts/123`      | `<Posts><Post postId="123">` |
+| `/posts/123/edit` | `<PostEditor postId="123">`  |
 
-示例：
+- `posts.$postId.tsx` 路由正常嵌套在 `posts.tsx` 路由下，将渲染 `<Posts><Post>`。
+- `posts_.$postId.edit.tsx` 路由**不共享**与其他路由相同的 `posts` 前缀，因此将被视为顶级路由并渲染 `<PostEditor>`。
+
+## 从路由中排除文件和文件夹
+
+文件和文件夹可通过在文件名前添加 `-` 前缀从路由生成中排除。这使您能够在路由目录中协同定位逻辑。
+
+考虑以下路由树：
 
 ```
 routes/
+├── posts.tsx
+├── -posts-table.tsx // 👈🏼 被忽略
+├── -components/ // 👈🏼 被忽略
+│   ├── header.tsx // 👈🏼 被忽略
+│   ├── footer.tsx // 👈🏼 被忽略
+│   ├── ...
+```
+
+我们可以从被排除的文件中导入到 posts 路由中
+
+```tsx
+import { createFileRoute } from '@tanstack/react-router'
+import { PostsTable } from './-posts-table'
+import { PostsHeader } from './-components/header'
+import { PostsFooter } from './-components/footer'
+
+export const Route = createFileRoute('/posts')({
+  loader: () => fetchPosts(),
+  component: PostComponent,
+})
+
+function PostComponent() {
+  const posts = Route.useLoaderData()
+
+  return (
+    <div>
+      <PostsHeader />
+      <PostsTable posts={posts} />
+      <PostsFooter />
+    </div>
+  )
+}
+```
+
+被排除的文件不会添加到 `routeTree.gen.ts` 中。
+
+## 无路径路由组目录
+
+无路径路由组目录使用 `()` 作为将路由文件分组的方式，无论其路径如何。它们纯粹是组织性的，不会以任何方式影响路由树或组件树。
+
+```
+routes/
+├── index.tsx
 ├── (app)/
 │   ├── dashboard.tsx
 │   ├── settings.tsx
+│   ├── users.tsx
 ├── (auth)/
 │   ├── login.tsx
+│   ├── register.tsx
 ```
 
-分组目录仅用于代码组织，不改变路由匹配行为。
+在上面的示例中，`app` 和 `auth` 目录纯粹是组织性的，不会以任何方式影响路由树或组件树。它们用于将相关路由分组以便于导航和组织。
+
+下表展示了基于 URL 将渲染的组件：
+
+| URL 路径     | 组件          |
+| ------------ | ------------- |
+| `/`          | `<Index>`     |
+| `/dashboard` | `<Dashboard>` |
+| `/settings`  | `<Settings>`  |
+| `/users`     | `<Users>`     |
+| `/login`     | `<Login>`     |
+| `/register`  | `<Register>`  |
+
+如您所见，`app` 和 `auth` 目录纯粹是组织性的，不会以任何方式影响路由树或组件树。
