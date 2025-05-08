@@ -1,0 +1,229 @@
+{
+  "$schema": "https://raw.githubusercontent.com/TanStack/tanstack.com/main/tanstack-docs-config.schema.json",
+  "docSearch": {
+    "appId": "FQ0DQ6MA3C",
+    "apiKey": "8264730bab8a9b7fa6a0c85761d7a3fe",
+    "indexName": "tanstack"
+  },
+  "sections": [
+    {
+      "label": "入門指南",
+      "children": [],
+      "frameworks": [
+        {
+          "label": "react",
+          "children": [
+            {
+              "label": "總覽",
+              "to": "framework/react/overview"
+            },
+            {
+              "label": "入門指南",
+              "to": "framework/react/getting-started"
+            },
+            {
+              "label": "快速開始",
+              "to": "framework/react/quick-start"
+            },
+            {
+              "label": "從零開始建構",
+              "to": "framework/react/build-from-scratch"
+            },
+            {
+              "label": "學習基礎知識",
+              "to": "framework/react/learn-the-basics"
+            },
+            {
+              "label": "伺服器函式 (Server Functions)",
+              "to": "framework/react/server-functions"
+            },
+            {
+              "label": "靜態伺服器函式 (Static Server Functions)",
+              "to": "framework/react/static-server-functions"
+            },
+            {
+              "label": "中介軟體 (Middleware)",
+              "to": "framework/react/middleware"
+            },
+            {
+              "label": "API 路由 (API Routes)",
+              "to": "framework/react/api-routes"
+            },
+            {
+              "label": "伺服器渲染 (SSR)",
+              "to": "framework/react/ssr"
+            },
+            {
+              "label": "託管服務 (Hosting)",
+              "to": "framework/react/hosting"
+            },
+            {
+              "label": "身份驗證 (Authentication)",
+              "to": "framework/react/authentication"
+            },
+            {
+              "label": "資料庫 (Databases)",
+              "to": "framework/react/databases"
+            },
+            {
+              "label": "可觀測性 (Observability)",
+              "to": "framework/react/observability"
+            },
+            {
+              "label": "靜態預渲染 (Static Prerendering)",
+              "to": "framework/react/static-prerendering"
+            },
+            {
+              "label": "路徑別名 (Path Aliases)",
+              "to": "framework/react/path-aliases"
+            }
+          ]
+        },
+        {
+          "label": "solid",
+          "children": [
+            {
+              "label": "總覽",
+              "to": "framework/solid/overview"
+            },
+            {
+              "label": "入門指南",
+              "to": "framework/solid/getting-started"
+            },
+            {
+              "label": "快速開始",
+              "to": "framework/solid/quick-start"
+            },
+            {
+              "label": "從零開始建構",
+              "to": "framework/solid/build-from-scratch"
+            },
+            {
+              "label": "學習基礎知識",
+              "to": "framework/solid/learn-the-basics"
+            },
+            {
+              "label": "伺服器函式 (Server Functions)",
+              "to": "framework/solid/server-functions"
+            },
+            {
+              "label": "靜態伺服器函式 (Static Server Functions)",
+              "to": "framework/solid/static-server-functions"
+            },
+            {
+              "label": "中介軟體 (Middleware)",
+              "to": "framework/solid/middleware"
+            },
+            {
+              "label": "API 路由 (API Routes)",
+              "to": "framework/solid/api-routes"
+            },
+            {
+              "label": "伺服器渲染 (SSR)",
+              "to": "framework/solid/ssr"
+            },
+            {
+              "label": "託管服務 (Hosting)",
+              "to": "framework/solid/hosting"
+            },
+            {
+              "label": "身份驗證 (Authentication)",
+              "to": "framework/solid/authentication"
+            },
+            {
+              "label": "資料庫 (Databases)",
+              "to": "framework/solid/databases"
+            },
+            {
+              "label": "可觀測性 (Observability)",
+              "to": "framework/solid/observability"
+            },
+            {
+              "label": "靜態預渲染 (Static Prerendering)",
+              "to": "framework/solid/static-prerendering"
+            },
+            {
+              "label": "路徑別名 (Path Aliases)",
+              "to": "framework/solid/path-aliases"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "範例",
+      "children": [],
+      "frameworks": [
+        {
+          "label": "react",
+          "children": [
+            {
+              "label": "基礎範例",
+              "to": "framework/react/examples/start-basic"
+            },
+            {
+              "label": "基礎範例 + React Query",
+              "to": "framework/react/examples/start-basic-react-query"
+            },
+            {
+              "label": "基礎範例 + Clerk 身份驗證",
+              "to": "framework/react/examples/start-clerk-basic"
+            },
+            {
+              "label": "基礎範例 + 自訂身份驗證",
+              "to": "framework/react/examples/start-basic-auth"
+            },
+            {
+              "label": "基礎範例 + Supabase 身份驗證",
+              "to": "framework/react/examples/start-supabase-basic"
+            },
+            {
+              "label": "Trellaux + Convex",
+              "to": "framework/react/examples/start-convex-trellaux"
+            },
+            {
+              "label": "Trellaux",
+              "to": "framework/react/examples/start-trellaux"
+            },
+            {
+              "label": "WorkOS",
+              "to": "framework/react/examples/start-workos"
+            },
+            {
+              "label": "Material UI",
+              "to": "framework/react/examples/start-material-ui"
+            }
+          ]
+        },
+        {
+          "label": "solid",
+          "children": [
+            {
+              "label": "基礎範例",
+              "to": "framework/solid/examples/start-bare"
+            },
+            {
+              "label": "基礎範例",
+              "to": "framework/solid/examples/start-basic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "教學",
+      "children": [],
+      "frameworks": [
+        {
+          "label": "react",
+          "children": [
+            {
+              "label": "讀取與寫入檔案",
+              "to": "framework/react/reading-writing-file"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
